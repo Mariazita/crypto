@@ -1,5 +1,7 @@
 package be.maria;
 
+import be.maria.tools.StringUtil;
+
 import java.security.PublicKey;
 
 public class TransactionOutput {

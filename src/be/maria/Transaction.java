@@ -1,5 +1,7 @@
 package be.maria;
 
+import be.maria.tools.StringUtil;
+
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.util.ArrayList;
@@ -44,7 +46,6 @@ public class Transaction {
 
     }
 
-
     public boolean processTransaction() {
         if (verifySignature() == false) {
             System.out.println("#Transaction Signature failed to verify");
@@ -64,9 +65,12 @@ public class Transaction {
 
         //generate transaction outputs:
         float leftOver = getInputsValue() - value; //get value of inputs then the left over change:
+        System.out.println("  " + getInputsValue() + " total input value");
         transactionId = calulateHash();
         outputs.add(new TransactionOutput(this.recipient, value, transactionId)); //send value to recipient
+        System.out.println("  " + value + " sent to recipient");
         outputs.add(new TransactionOutput(this.sender, leftOver, transactionId)); //send the left over 'change' back to sender
+        System.out.println("  " + leftOver + " leftover sent back to sender");
 
         //add outputs to Unspent list
         for (TransactionOutput o : outputs) {

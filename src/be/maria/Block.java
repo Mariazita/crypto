@@ -1,5 +1,7 @@
 package be.maria;
 
+import be.maria.tools.StringUtil;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -19,13 +21,13 @@ public class Block {
     }
 
     public String calculateHash() {
-        String calculatedhash = StringUtil.applySha256(
+        String calculatedHash = StringUtil.applySha256(
                 previousHash +
                         Long.toString(timeStamp) +
                         Integer.toString(nonce) +
                         merkleRoot
         );
-        return calculatedhash;
+        return calculatedHash;
     }
 
     //Increases nonce value until hash target is reached.
@@ -52,7 +54,7 @@ public class Block {
         }
 
         transactions.add(transaction);
-        System.out.println("Transaction Successfully added to Block");
+        System.out.println("Transaction successfully added to block");
 
         return true;
     }

@@ -1,5 +1,6 @@
-package be.maria;
+package be.maria.tools;
 
+import be.maria.Transaction;
 import com.google.gson.GsonBuilder;
 
 import java.security.*;
