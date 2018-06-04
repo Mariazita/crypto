@@ -1,4 +1,4 @@
-package be.main;
+package main;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -6,9 +6,6 @@ import static org.junit.Assert.assertTrue;
 
 import be.maria.Block;
 import be.maria.LivChain;
-import org.beryx.textio.TextIO;
-import org.beryx.textio.TextIoFactory;
-import org.beryx.textio.TextTerminal;
 import org.junit.Before;
 import org.junit.Test;
 
